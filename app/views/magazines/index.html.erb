@@ -14,6 +14,7 @@
   <tbody>
     <% @magazines.each do |magazine| %>
       <tr>
+        <td><%= magazine.user.username %><td>
         <td><%= magazine.title %></td>
         <td><%= magazine.user_id %></td>
         <td><%= link_to 'Show', magazine %></td>
