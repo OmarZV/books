@@ -14,7 +14,7 @@ class MagazinesController < ApplicationController
 
   # GET /magazines/new
   def new
-    @magazine = Magazine.new
+    @magazine = current_user.magazines.build
   end
 
   # GET /magazines/1/edit
@@ -24,7 +24,7 @@ class MagazinesController < ApplicationController
   # POST /magazines
   # POST /magazines.json
   def create
-    @magazine = Magazine.new(magazine_params)
+    @magazine = current_user.magazines.build(magazine_params)  
 
     respond_to do |format|
       if @magazine.save
